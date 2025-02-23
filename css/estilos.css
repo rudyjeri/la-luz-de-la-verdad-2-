@@ -1,0 +1,1197 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --padding-container: 100px 0;
+    --color-title: #2a4ce1;
+}
+
+body {
+    font-family: 'Arial', sans-serif; 
+    
+}
+/* Hero container */
+:root {
+    --padding-container: 20px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    color: #ebe5e5;
+    padding: var(--padding-container);
+}
+
+.hero__container {
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    text-align: center;
+    gap: 1.5em;
+    padding: 0 20px;
+}
+
+/* Título responsive */
+.hero__title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Párrafo responsive */
+.hero__paragraph {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    font-family: Georgia, serif;
+    margin: 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+/* Media Queries para mejorar la responsividad */
+@media (max-width: 768px) {
+    .hero__container {
+        height: auto;
+        padding: 50px 15px;
+    }
+
+    .hero__title {
+        font-size: clamp(1.8rem, 6vw, 2.5rem);
+        margin-top: px; /* Ajusta este valor para que el párrafo suba */
+
+    }
+
+    .hero__paragraph {
+        font-size: clamp(0.9rem, 3.5vw, 1.2rem);
+    }
+
+    .cta {
+        padding: 10px 25px;
+        font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__container {
+        text-align: center;
+        height: auto;
+        padding: 40px 10px;
+    }
+
+    .hero__title {
+        font-size: clamp(1.5rem, 5vw, 5rem);
+
+    }
+
+    .hero__paragraph {
+        font-size: clamp(0.8rem, 3vw, 1rem);
+        margin-top: 3px; /* Ajusta este valor para que el párrafo suba */
+
+    }
+
+    .cta {
+        padding: 8px 20px;
+        font-size: clamp(0.8rem, 2vw, 1rem);
+    }
+}
+
+/* Botón responsivo */
+.cta {
+    display: inline-block;
+    background-color: #2e72ef;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    transition: background 0.3s ease-in-out;
+}
+
+.cta:hover {
+    background-color: #1d5ed4;
+}
+
+.hero-inicio::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%; /* Cubre toda la sección */
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('../images/leer-la-biblia.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+/* Media Queries para hacerlo más responsive */
+@media (max-width: 768px) {
+   
+    .hero-inicio::before {
+        height: 50%; /* Asegura que la imagen se mantenga bien */
+    }
+}
+
+/* Estilo general de la nueva sección de los nuevos artículos  */
+
+.trending-section {
+    padding: 20px;
+    background-color: #0c7ad586;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h2 {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.view-all {
+    font-size: 1rem;
+    color: #0a4789;
+    text-decoration: none;
+}
+
+.view-all:hover {
+    text-decoration: underline;
+}
+
+.video-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.video-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.video-card:hover {
+    transform: scale(1.03);
+}
+
+.thumbnail {
+    position: relative;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.thumbnail .duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 3px 8px;
+    font-size: 0.8rem;
+    border-radius: 4px;
+}
+
+.video-card h3 {
+    font-size: 1rem;
+    margin: 10px;
+    line-height: 1.3;
+}
+
+.video-card h3 a {
+    color: #000; /* Negro por defecto */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.video-card h3 a:hover {
+    color: #d5a729; /* Efecto hover */
+}
+
+.video-card p {
+    font-size: 0.9rem;
+    margin: 0 10px 10px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .header h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Estilos generales para Misión y Visión */
+.mision-vision {
+    background-color: #f8f9fa; /* Fondo suave */
+    padding: 60px 20px;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+.contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.cuadro {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 15px;
+    padding: 30px 20px;
+    flex: 1 1 calc(45% - 20px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cuadro:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cuadro h2 {
+    font-size: 2em;
+    color: #1063cf;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.cuadro p {
+    font-size: 1.1em;
+    color: #555555;
+    line-height: 1.8;
+    margin-top: 10px;
+}
+
+.icono img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+/* Adaptación para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .contenedor {
+        flex-direction: column;
+    }
+
+    .cuadro {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* Adaptación para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .cuadro {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+    }
+}
+
+
+.hero-feyciencia::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/investigadores-cristianos-o-como-conciliar-ciencia-y-fe.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+/* Media Queries para hacerlo más responsive */
+@media (max-width: 768px) {
+   
+    .hero-feyciencia::before {
+        height: 50%; /* Asegura que la imagen se mantenga bien */
+    }
+}
+.topics {
+    padding: 30px 20px;
+    background-color: #72b1e844;
+  }
+
+  .topics__title {
+    text-align: center;
+    font-size: 3rem;
+    color: #11568f;
+    margin-bottom: 50px;
+  }
+
+  .topics__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  .topic-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #fff;
+  }
+
+  .topic-card a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .topic-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .topic-card__image {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+  }
+
+  .topic-card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .topic-card__title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  @media (max-width: 1024px) {
+    .topics__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .topic-card__title {
+      font-size: 1.3rem;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .topics__title {
+      font-size: 2.5rem;
+    }
+
+    .topics__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+ 
+.hero-dino::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/los-sauropodos-eran-los-dinosaurios-mas-longevos-se-estima-que-podian-vivir-de-50-a-100-anos_01191acc_230106131643_1280x800.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.hero-dino1::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/los-sauropodos-eran-los-dinosaurios-mas-longevos-se-estima-que-podian-vivir-de-50-a-100-anos_01191acc_230106131643_1280x800.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.hero-creacion::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/criacionismo.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.hero-diluvio::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/diluvio.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.articles {
+    position: relative;
+    padding: 2em 1em;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.articles__title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.articles__description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.articles__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Diseño responsivo */
+    gap: 1.5em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card__content {
+    padding: 1em;
+}
+
+.card__title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.card__description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1em;
+}
+
+.card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+.card__tag {
+    background: #007bff;
+    color: #fff;
+    padding: 0.2em 0.5em;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+  
+  /* Responsividad */
+  @media (max-width: 992px) {
+    .articles__container {
+      grid-template-columns: repeat(2, 1fr); /* 2 tarjetas por fila */
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .articles__container {
+      grid-template-columns: 1fr; /* 1 tarjeta por fila */
+    }
+  }
+  
+.hero-profecias::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/2022480_univ_lsr_lg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+ /* Media Queries para hacerlo más responsive */
+@media (max-width: 768px) {
+   
+    .hero-profecias::before {
+        height: 50%; /* Asegura que la imagen se mantenga bien */
+    }
+}
+.hero-daniel::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/maxresdefault\ \(3\).jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.hero-apocalipsis::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/Revelation_Series_1294x628.webp');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.hero-apologetica::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/The-Benefits-of-Engaging-in-Great-Bible-Study-Lessons.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+.hero-santuario::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/Sanctuary-cleansed.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.hero-justificacion::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/lightstock_441210_full_patrick_finegan-scaled-1.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+.hero-jus::before {
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70%;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), 
+        url('..//images/1888-conference.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+}
+
+
+/* PANEL*/
+.nav {
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 0px; /* Ajusta este valor para bajar más la barra */
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center; /* Alinea verticalmente imagen y título */
+}
+
+.nav__logo-img {
+    height: 90px; /* Ajusta el tamaño de la imagen */
+    margin-right: 15px; /* Espacio entre la imagen y el título */
+}
+
+.nav__title {
+    font-weight: 300;
+    font-size: 2em; /* Ajusta el tamaño del título */
+    margin-right: auto; /* Si deseas que el título se alinee a la izquierda */
+}
+
+.nav__link {
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+
+.nav__items {
+    list-style: none;
+}
+
+.nav__links {
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav__menu {
+    margin-left: auto;
+    cursor: pointer;
+    display: none;
+}
+
+.nav__img {
+    display: block;
+    width: 30px;
+}
+
+.nav__close {
+    display: var(--show, none);
+}
+
+
+/* Estilos generales de los articulos */
+
+.article-container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgb(228, 228, 228);
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+/* Estilos de subtítulos y párrafos */
+.subtitle-art {
+    color: black;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+.about__paragraphart {
+    line-height: 1.7;
+    margin-top: 2%;
+    color: #504f4f;
+    text-align: justify;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Ajuste general de imágenes */
+.image-container {
+    text-align: center;
+    margin: 5px 12px;
+    display: block;
+}
+
+.article-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-caption {
+    font-style: italic;
+    color: #555;
+    margin-top: 5px;
+    font-size: 0.9rem;
+}
+
+/* Ajuste de imágenes flotantes */
+.float-left {
+    float: left;
+    margin: 0 15px 10px 0;
+    max-width: 40%;
+}
+
+.float-right {
+    float: right;
+    margin: 0 0 10px 15px;
+    max-width: 40%;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    .float-left, .float-right {
+        float: none;
+        display: block;
+        margin: 10px auto;
+        max-width: 100%;
+    }
+
+    .article-container {
+        padding: 15px;
+    }
+
+    .subtitle-art {
+        font-size: 1.3rem;
+        padding-left: 0;
+    }
+
+    .about__paragraphart {
+        font-size: 1rem;
+    }
+}
+
+/* Corregir alineación flotante */
+.section::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Estilos para citas */
+.quote-section {
+    background: #f1f1f1;
+    padding: 20px;
+    border-left: 5px solid #0073e6;
+    margin: 20px 0;
+    font-style: italic;
+    color: #444;
+}
+
+.quote-section blockquote {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.quote-author {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Estilos para el autor del artículo */
+.article-author {
+    margin-top: 30px;
+    padding: 15px;
+    background: #e8e8e8;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #333;
+}
+
+
+
+
+/* About */
+
+.about {
+    text-align: center;
+    margin: 0 auto; /* Centra la sección si tiene un ancho fijo */
+    padding: 30px 20px; /* Reduce el espacio interno superior e inferior */
+}
+
+.subtitle {
+    color: #2c3e50; /* Color del subtítulo */
+    font-size: 2.5rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Texto en negrita */
+    text-transform: uppercase; /* Convertir a mayúsculas */
+    margin-bottom: 10px; /* Espacio inferior */
+}
+
+.about__paragraph {
+    color: #333; /* Color del texto */
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    line-height: 1.8; /* Espaciado entre líneas */
+    text-align: justify; /* Justificar texto */
+}
+
+
+.about__main {
+    padding-top: 20px; /* Reduce el espacio superior entre los iconos y el título */
+    display: grid;
+    width: 80%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+.about__icons {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.about__icon {
+    width: 220px;  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+
+footer {
+    background-color: #1D293F;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px 0;
+}
+
+.footer__title {
+    font-weight: 700; /* Cambia a un peso de fuente más grueso */
+    font-size: 2.5rem; /* Aumenta el tamaño de la fuente */
+    margin-bottom: 30px;
+    color: #fefefe; /* Cambia el color a dorado */
+    font-family: 'Playfair Display', serif;
+    /* Cambia la fuente */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Añade sombra al texto */
+}
+
+.footer__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 60px;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+
+.footer__inputs {
+    margin-top: 10px;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap; /* Ajusta los inputs en pantallas pequeñas */
+}
+
+.footer__image-container {
+    text-align: center; /* Centra la imagen */
+    margin-top: 40px; /* Espacio arriba de la imagen */
+}
+
+.footer__image {
+    width: 350px; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border-radius: 20px; /* Opcional: bordes redondeados */
+}
+
+
+.footer__copy {
+    text-align: center;
+    color: #fff;
+    padding: 30px 0;
+}
+
+.footer__copyright {
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+.footer__social {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los íconos */
+    margin-bottom: 20px;
+}
+
+.footer__img {
+    width: 30px;
+    transition: transform 0.3s ease; /* Efecto de hover */
+}
+
+.footer__img:hover {
+    transform: scale(1.2); /* Efecto de hover */
+}
+
+/* Media Queries para Responsive Design */
+@media (max-width: 768px) {
+    .footer__container {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        text-align: center;
+    }
+
+    .footer__inputs {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+    }
+
+    .footer__input {
+        margin-right: 0;
+        margin-bottom: 10px; /* Espacio entre el input y el botón */
+    }
+
+    .footer__submit {
+        width: 100%; /* Botón ocupa todo el ancho */
+    }
+
+    .footer__social {
+        flex-wrap: wrap; /* Ajusta los íconos en pantallas pequeñas */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer__title {
+        font-size: 1.5rem; /* Tamaño de fuente más pequeño para móviles */
+    }
+
+    .footer__input {
+        min-width: 100%; /* Input ocupa todo el ancho */
+    }
+}
+/* Media queries */
+
+@media (max-width:800px){
+    .nav__menu{
+        display: block;
+    }
+
+    .nav__link--menu{
+        position: fixed;
+        background-color: #020202;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        z-index: 100;
+        opacity: 0;
+        pointer-events: none;
+        transition: .7s opacity;
+    }
+
+    .nav__link--show{
+        --show: block;
+        opacity:1 ;
+        pointer-events: unset;
+    }
+
+    .nav__close{
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 30px;
+        cursor: pointer;
+    } 
+    .about__main{
+        gap: 2em;
+    }
+   .about__paragraph {
+    font-size: 1.2rem; /* Tamaño de la fuente */
+    margin-top: 10%;
+    }
+    .about__icons:last-of-type{
+        grid-column: 1/-1;
+    }
+    .knowledge__container{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content 1fr;
+        gap: 3em;
+        text-align: center;
+    }
+
+    .knowledge__picture{
+        grid-row: 1/2;
+        justify-self: center;
+    }
+
+    .testimony__container{
+        grid-template-columns: 30px 1fr 30px;
+    }
+
+    .testimony__body{
+        grid-template-columns: 1fr;
+        grid-template-rows: max-content max-content;
+        gap: 3em;
+        justify-items:center ;
+    }
+
+
+    .testimony__img{
+        width: 200px;
+        height: 200px;
+        
+    }
+
+    .questions__copy{
+        width: 100%;
+    }
+
+
+    .hero__paragraph{
+        font-size: 1rem;
+        text-align: center;
+        margin-top: 3px; /* Ajusta este valor para que el párrafo suba */
+
+    }
+
+    .subtitle{
+        font-size: 1.7rem;
+    }
+
+    .price__element{
+        width: 90%;
+    }
+
+    .price__element--best{
+        width: 40%;
+        /* padding: 40px; */
+    }
+
+    .price__price{
+        font-size: 2rem;
+    }
+
+    .testimony{
+        --padding-container: 60px 0;
+    }
+
+    .testimony__container{
+        grid-template-columns: 28px 1fr 28px;
+        gap: .9em;
+    }
+
+    .testimony__arrow{
+        width: 100%;
+    }
+
+    .testimony__course{
+        margin-top: 15px;
+    }
+
+    .questions__title{
+        font-size: 1rem;
+    }
+
+    .footer__title{
+        justify-self: start;
+        margin-bottom: 15px;
+    }
+
+    .nav--footer{
+        padding-bottom: 60px;
+    }
+
+    .nav__link--footer{
+        justify-content: space-between;
+    }
+
+    .footer__inputs{
+        flex-wrap: wrap;
+    }
+
+    .footer__input{
+        flex-basis: 100%;
+        margin: 0;
+        margin-bottom: 16px;
+    }
+
+    .footer__submit{
+        margin-right: auto;
+        margin-left: 0;
+        
+
+        /* 
+        margin:0;
+        width: 100%;
+        */
+    }
+}
